@@ -23,16 +23,16 @@ void printArray(int arr[], int n) {
 }
 
 int main() {
-    int arr[] = {12, 11, 13, 5, 6};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int array[] = {12, 11, 13, 5, 6};
+    int n = sizeof(array) / sizeof(array[0]);
 
     cout << "Original array: ";
-    printArray(arr, n);
+    printArray(array, n);
 
-    insertionSort(arr, n);
+    insertionSort(array, n);
 
     cout << "Sorted array: ";
-    printArray(arr, n);
+    printArray(array, n);
 
     return 0;
 }
