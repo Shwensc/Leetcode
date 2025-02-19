@@ -1,0 +1,1110 @@
+void* int *alloc_type & vector & arr, int n)
+{
+  bool retval.0;
+
+  {
+    int i;
+
+    i = n + -1;
+    goto <D.205277>;
+    <D.205276>:
+    {
+      {
+        int j;
+
+        j = 0;
+        goto <D.205275>;
+        <D.205274>:
+        {
+          {
+            _1 = (long long unsigned int) j;
+            _2 = std::vector<int>::operator[] (arr, _1);
+            _3 = *_2;
+            _4 = j + 1;
+            _5 = (long long unsigned int) _4;
+            _6 = std::vector<int>::operator[] (arr, _5);
+            _7 = *_6;
+            retval.0 = _3 > _7;
+            if (retval.0 != 0) goto <D.221959>; else goto <D.221960>;
+            <D.221959>:
+            {
+              int temp;
+
+              _8 = j + 1;
+              _9 = (long long unsigned int) _8;
+              _10 = std::vector<int>::operator[] (arr, _9);
+              temp = *_10;
+              _11 = (long long unsigned int) j;
+              _12 = std::vector<int>::operator[] (arr, _11);
+              _13 = *_12;
+              _14 = j + 1;
+              _15 = (long long unsigned int) _14;
+              _16 = std::vector<int>::operator[] (arr, _15);
+              *_16 = _13;
+              temp.1_17 = temp;
+              _18 = (long long unsigned int) j;
+              _19 = std::vector<int>::operator[] (arr, _18);
+              *_19 = temp.1_17;
+            }
+            goto <D.221961>;
+            <D.221960>:
+            <D.221961>:
+          }
+        }
+        j = j + 1;
+        <D.205275>:
+        if (j < i) goto <D.205274>; else goto <D.205272>;
+        <D.205272>:
+      }
+    }
+    i = i + -1;
+    <D.205277>:
+    if (i >= 0) goto <D.205276>; else goto <D.205270>;
+    <D.205270>:
+  }
+  std::operator<< <std::char_traits<char> > (&cout, "\nArray after sorting: ");
+  {
+    int i;
+
+    i = 0;
+    goto <D.205281>;
+    <D.205280>:
+    _20 = (long long unsigned int) i;
+    _21 = std::vector<int>::operator[] (arr, _20);
+    _22 = *_21;
+    _23 = std::basic_ostream<char>::operator<< (&cout, _22);
+    std::operator<< <std::char_traits<char> > (_23, " ");
+    i = i + 1;
+    <D.205281>:
+    if (n > i) goto <D.205280>; else goto <D.205278>;
+    <D.205278>:
+  }
+}
+
+
+__attribute__((nodiscard))
+value_type & std::vector<int>::operator[] (struct vector * const this, size_type __n)
+{
+  value_type & D.221963;
+
+  try
+    {
+      _1 = this->D.186746._M_impl.D.186082._M_start;
+      _2 = __n * 4;
+      D.221963 = _1 + _2;
+      return D.221963;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+ main ()
+{
+  struct initializer_list D.205286;
+  static const int C.2[5] = {13, 59, 12, 15, 56};
+  struct allocator_type D.205297;
+  int D.221966;
+
+  {
+    struct vector arr;
+    int n;
+
+    try
+      {
+        D.205286._M_array = &C.2;
+        D.205286._M_len = 5;
+        try
+          {
+            std::allocator<int>::allocator (&D.205297);
+            try
+              {
+                std::vector<int>::vector (&arr, D.205286, &D.205297);
+              }
+            finally
+              {
+                std::allocator<int>::~allocator (&D.205297);
+              }
+          }
+        finally
+          {
+            D.205297 = {CLOBBER(eos)};
+          }
+        try
+          {
+            _1 = std::vector<int>::size (&arr);
+            n = (int) _1;
+            std::operator<< <std::char_traits<char> > (&cout, "Array before sorting: ");
+            {
+              int i;
+
+              i = 0;
+              goto <D.205304>;
+              <D.205303>:
+              _2 = (long long unsigned int) i;
+              _3 = std::vector<int>::operator[] (&arr, _2);
+              _4 = *_3;
+              _5 = std::basic_ostream<char>::operator<< (&cout, _4);
+              std::operator<< <std::char_traits<char> > (_5, " ");
+              i = i + 1;
+              <D.205304>:
+              if (n > i) goto <D.205303>; else goto <D.205301>;
+              <D.205301>:
+            }
+            bubbleSort (&arr, n);
+            D.221966 = 0;
+            return D.221966;
+          }
+        finally
+          {
+            std::vector<int>::~vector (&arr);
+          }
+      }
+    finally
+      {
+        arr = {CLOBBER(eos)};
+      }
+  }
+  D.221966 = 0;
+  return D.221966;
+}
+
+
+__attribute__((always_inline))
+void std::allocator<int>::allocator (struct allocator * const this)
+{
+  try
+    {
+      {
+        std::__new_allocator<int>::__new_allocator (this);
+        try
+          {
+
+          }
+        catch
+          {
+            std::__new_allocator<int>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+__attribute__((always_inline))
+void std::__new_allocator<int>::__new_allocator (struct __new_allocator * const this)
+{
+  try
+    {
+      {
+
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::vector<int>::vector (struct vector * const this, struct initializer_list __l, const struct allocator_type & __a)
+{
+  struct random_access_iterator_tag D.211828;
+  struct forward_iterator_tag D.221975;
+
+  *this = {CLOBBER(bob)};
+  {
+    _1 = &this->D.186746;
+    std::_Vector_base<int, std::allocator<int> >::_Vector_base (_1, __a);
+    try
+      {
+        try
+          {
+            _2 = &D.211828;
+            _3 = std::initializer_list<int>::end (&__l);
+            _4 = std::initializer_list<int>::begin (&__l);
+            std::vector<int>::_M_range_initialize<const int*> (this, _4, _3, D.221975);
+          }
+        finally
+          {
+            D.211828 = {CLOBBER(eos)};
+          }
+      }
+    catch
+      {
+        _5 = &this->D.186746;
+        std::_Vector_base<int, std::allocator<int> >::~_Vector_base (_5);
+      }
+  }
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::_Vector_base (struct _Vector_base * const this, const struct allocator_type & __a)
+{
+  try
+    {
+      *this = {CLOBBER(bob)};
+      {
+        _1 = &this->_M_impl;
+        std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (_1, __a);
+        try
+          {
+
+          }
+        catch
+          {
+            _2 = &this->_M_impl;
+            std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (_2);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (struct _Vector_impl * const this, const struct _Tp_alloc_type & __a)
+{
+  try
+    {
+      *this = {CLOBBER(bob)};
+      {
+        std::allocator<int>::allocator (this, __a);
+        try
+          {
+            _1 = &this->D.186082;
+            std::_Vector_base<int, std::allocator<int> >::_Vector_impl_data::_Vector_impl_data (_1);
+          }
+        catch
+          {
+            std::allocator<int>::~allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+__attribute__((always_inline))
+void std::allocator<int>::allocator (struct allocator * const this, const struct allocator & __a)
+{
+  try
+    {
+      {
+        std::__new_allocator<int>::__new_allocator (this, __a);
+        try
+          {
+
+          }
+        catch
+          {
+            std::__new_allocator<int>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+__attribute__((always_inline))
+void std::__new_allocator<int>::__new_allocator (struct __new_allocator * const this, const struct __new_allocator & D.185786)
+{
+  try
+    {
+      {
+
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::_Vector_impl_data::_Vector_impl_data (struct _Vector_impl_data * const this)
+{
+  try
+    {
+      *this = {CLOBBER(bob)};
+      {
+        this->_M_start = 0B;
+        this->_M_finish = 0B;
+        this->_M_end_of_storage = 0B;
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::initializer_list<int>::end (const struct initializer_list * const this)
+{
+  const int * D.221978;
+
+  try
+    {
+      _1 = std::initializer_list<int>::begin (this);
+      _2 = std::initializer_list<int>::size (this);
+      _3 = _2 * 4;
+      D.221978 = _1 + _3;
+      return D.221978;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+ std::initializer_list<int>::size (const struct initializer_list * const this)
+{
+  size_type D.221980;
+
+  try
+    {
+      D.221980 = this->_M_len;
+      return D.221980;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+ std::initializer_list<int>::begin (const struct initializer_list * const this)
+{
+  const int * D.221982;
+
+  try
+    {
+      D.221982 = this->_M_array;
+      return D.221982;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+ std::vector<int>::_M_range_initialize<const int*> (struct vector * const this, const int * __first, const int * __last, struct forward_iterator_tag D.216592)
+{
+  const size_type __n;
+
+  _1 = std::distance<const int*> (__first, __last);
+  __n = (const size_type) _1;
+  _2 = &this->D.186746;
+  _3 = &this->D.186746;
+  _4 = std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (_3);
+  _5 = std::vector<int>::_S_check_init_len (__n, _4);
+  _6 = std::_Vector_base<int, std::allocator<int> >::_M_allocate (_2, _5);
+  this->D.186746._M_impl.D.186082._M_start = _6;
+  _7 = this->D.186746._M_impl.D.186082._M_start;
+  _8 = __n * 4;
+  _9 = _7 + _8;
+  this->D.186746._M_impl.D.186082._M_end_of_storage = _9;
+  _10 = &this->D.186746;
+  _11 = std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (_10);
+  _12 = this->D.186746._M_impl.D.186082._M_start;
+  _13 = std::__uninitialized_copy_a<const int*, int*, int> (__first, __last, _12, _11);
+  this->D.186746._M_impl.D.186082._M_finish = _13;
+}
+
+
+__attribute__((always_inline, nodiscard))
+difference_type std::distance<const int*> (const int * __first, const int * __last)
+{
+  difference_type D.221988;
+  struct random_access_iterator_tag D.221989;
+
+  std::__iterator_category<const int*> (&__first);
+  __first.3_1 = __first;
+  D.221988 = std::__distance<const int*> (__first.3_1, __last, D.221989);
+  return D.221988;
+}
+
+
+__attribute__((always_inline))
+struct iterator_category std::__iterator_category<const int*> (const int * const & D.218149)
+{
+  struct iterator_category D.221991;
+
+  return D.221991;
+}
+
+
+__attribute__((always_inline))
+difference_type std::__distance<const int*> (const int * __first, const int * __last, struct random_access_iterator_tag D.218158)
+{
+  difference_type D.221993;
+
+  _1 = __last - __first;
+  D.221993 = _1 /[ex] 4;
+  return D.221993;
+}
+
+
+ std::vector<int>::_S_check_init_len (size_type __n, const struct allocator_type & __a)
+{
+  bool retval.4;
+  struct _Tp_alloc_type D.218167;
+  size_type D.221998;
+
+  try
+    {
+      std::allocator<int>::allocator (&D.218167, __a);
+      try
+        {
+          _1 = std::vector<int>::_S_max_size (&D.218167);
+          retval.4 = __n > _1;
+        }
+      finally
+        {
+          std::allocator<int>::~allocator (&D.218167);
+        }
+    }
+  finally
+    {
+      D.218167 = {CLOBBER(eos)};
+    }
+  if (retval.4 != 0) goto <D.221996>; else goto <D.221997>;
+  <D.221996>:
+  std::__throw_length_error ("cannot create std::vector larger than max_size()");
+  <D.221997>:
+  D.221998 = __n;
+  return D.221998;
+}
+
+
+__attribute__((always_inline))
+void std::allocator<int>::allocator (struct allocator * const this, const struct allocator & __a)
+{
+  try
+    {
+      {
+        std::__new_allocator<int>::__new_allocator (this, __a);
+        try
+          {
+
+          }
+        catch
+          {
+            std::__new_allocator<int>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::vector<int>::_S_max_size (const struct _Tp_alloc_type & __a)
+{
+  size_type D.222000;
+
+  try
+    {
+      {
+        const size_t __diffmax;
+        const size_t __allocmax;
+
+        try
+          {
+            __diffmax = 2305843009213693951;
+            _1 = std::allocator_traits<std::allocator<int> >::max_size (__a);
+            __allocmax = _1;
+            _2 = std::min<long long unsigned int> (&__diffmax, &__allocmax);
+            D.222000 = *_2;
+            return D.222000;
+          }
+        finally
+          {
+            __diffmax = {CLOBBER(eos)};
+            __allocmax = {CLOBBER(eos)};
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+__attribute__((always_inline))
+size_type std::allocator_traits<std::allocator<int> >::max_size (const struct allocator_type & __a)
+{
+  size_type D.222003;
+
+  try
+    {
+      D.222003 = std::__new_allocator<int>::max_size (__a);
+      return D.222003;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+__attribute__((always_inline))
+size_type std::__new_allocator<int>::max_size (const struct __new_allocator * const this)
+{
+  size_type D.222005;
+
+  try
+    {
+      D.222005 = std::__new_allocator<int>::_M_max_size (this);
+      return D.222005;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+__attribute__((always_inline))
+size_type std::__new_allocator<int>::_M_max_size (const struct __new_allocator * const this)
+{
+  size_type D.222007;
+
+  try
+    {
+      D.222007 = 2305843009213693951;
+      return D.222007;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+__attribute__((nodiscard))
+const long long unsigned int & std::min<long long unsigned int> (const long long unsigned int & __a, const long long unsigned int & __b)
+{
+  const long long unsigned int & D.222011;
+
+  _1 = *__b;
+  _2 = *__a;
+  if (_1 < _2) goto <D.222009>; else goto <D.222010>;
+  <D.222009>:
+  D.222011 = __b;
+  // predicted unlikely by early return (on trees) predictor.
+  return D.222011;
+  <D.222010>:
+  D.222011 = __a;
+  return D.222011;
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::_M_allocate (struct _Vector_base * const this, size_t __n)
+{
+  int * D.222013;
+  int * iftmp.5;
+  typedef struct _Tr _Tr;
+
+  if (__n != 0) goto <D.222015>; else goto <D.222016>;
+  <D.222015>:
+  _1 = &this->_M_impl;
+  iftmp.5 = std::allocator_traits<std::allocator<int> >::allocate (_1, __n);
+  goto <D.222017>;
+  <D.222016>:
+  iftmp.5 = 0B;
+  <D.222017>:
+  D.222013 = iftmp.5;
+  return D.222013;
+}
+
+
+__attribute__((always_inline, nodiscard))
+int * std::allocator_traits<std::allocator<int> >::allocate (struct allocator_type & __a, size_type __n)
+{
+  int * D.222020;
+
+  D.222020 = std::__new_allocator<int>::allocate (__a, __n, 0B);
+  return D.222020;
+}
+
+
+__attribute__((nodiscard))
+int * std::__new_allocator<int>::allocate (struct __new_allocator * const this, size_type __n, const void * D.220941)
+{
+  bool retval.6;
+  int * D.222030;
+
+  _1 = std::__new_allocator<int>::_M_max_size (this);
+  _2 = __n > _1;
+  _3 = (long int) _2;
+  _4 = __builtin_expect (_3, 0);
+  retval.6 = _4 != 0;
+  if (retval.6 != 0) goto <D.222024>; else goto <D.222025>;
+  <D.222024>:
+  if (__n > 4611686018427387903) goto <D.222026>; else goto <D.222027>;
+  <D.222026>:
+  std::__throw_bad_array_new_length ();
+  <D.222027>:
+  std::__throw_bad_alloc ();
+  <D.222025>:
+  {
+    if (0 != 0) goto <D.222028>; else goto <D.222029>;
+    <D.222028>:
+    {
+      align_val_t __al;
+
+      __al = 4;
+      _5 = __n * 4;
+      D.222030 = operator new (_5, __al);
+      return D.222030;
+    }
+    <D.222029>:
+  }
+  _6 = __n * 4;
+  D.222030 = operator new (_6);
+  return D.222030;
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (struct _Vector_base * const this)
+{
+  struct _Tp_alloc_type & D.222034;
+
+  try
+    {
+      D.222034 = &this->_M_impl;
+      return D.222034;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+ std::__uninitialized_copy_a<const int*, int*, int> (const int * __first, const int * __last, int * __result, struct allocator & D.218174)
+{
+  int * D.222036;
+
+  D.222036 = std::uninitialized_copy<const int*, int*> (__first, __last, __result);
+  return D.222036;
+}
+
+
+ std::uninitialized_copy<const int*, int*> (const int * __first, const int * __last, int * __result)
+{
+  int * D.222039;
+  typedef _ValueType1 _ValueType1;
+  typedef _ValueType2 _ValueType2;
+  const bool __can_memmove;
+  typedef const int & _From;
+  const bool __assignable;
+
+  __can_memmove = 1;
+  __assignable = 1;
+  D.222039 = std::__uninitialized_copy<true>::__uninit_copy<const int*, int*> (__first, __last, __result);
+  return D.222039;
+}
+
+
+ std::__uninitialized_copy<true>::__uninit_copy<const int*, int*> (const int * __first, const int * __last, int * __result)
+{
+  int * D.222042;
+
+  D.222042 = std::copy<const int*, int*> (__first, __last, __result);
+  return D.222042;
+}
+
+
+ std::copy<const int*, int*> (const int * __first, const int * __last, int * __result)
+{
+  int * D.222045;
+
+  _1 = std::__miter_base<const int*> (__last);
+  _2 = std::__miter_base<const int*> (__first);
+  D.222045 = std::__copy_move_a<false, const int*, int*> (_2, _1, __result);
+  return D.222045;
+}
+
+
+ std::__miter_base<const int*> (const int * __it)
+{
+  const int * D.222048;
+
+  D.222048 = __it;
+  return D.222048;
+}
+
+
+ std::__copy_move_a<false, const int*, int*> (const int * __first, const int * __last, int * __result)
+{
+  int * D.222050;
+
+  __result.7_1 = __result;
+  _2 = std::__niter_base<int*> (__result.7_1);
+  _3 = std::__niter_base<const int*> (__last);
+  _4 = std::__niter_base<const int*> (__first);
+  _5 = std::__copy_move_a1<false, const int*, int*> (_4, _3, _2);
+  D.222050 = std::__niter_wrap<int*> (&__result, _5);
+  return D.222050;
+}
+
+
+ std::__niter_base<int*> (int * __it)
+{
+  int * D.222053;
+
+  try
+    {
+      D.222053 = __it;
+      return D.222053;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+ std::__niter_base<const int*> (const int * __it)
+{
+  const int * D.222055;
+
+  try
+    {
+      D.222055 = __it;
+      return D.222055;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+ std::__copy_move_a1<false, const int*, int*> (const int * __first, const int * __last, int * __result)
+{
+  int * D.222057;
+
+  D.222057 = std::__copy_move_a2<false, const int*, int*> (__first, __last, __result);
+  return D.222057;
+}
+
+
+ std::__copy_move_a2<false, const int*, int*> (const int * __first, const int * __last, int * __result)
+{
+  int * D.222060;
+  typedef struct _Category _Category;
+
+  D.222060 = std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<const int, int> (__first, __last, __result);
+  return D.222060;
+}
+
+
+ std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<const int, int> (const int * __first, const int * __last, int * __result)
+{
+  int * D.222069;
+  const ptrdiff_t _Num;
+
+  _1 = __last - __first;
+  _Num = _1 /[ex] 4;
+  _2 = _Num > 1;
+  _3 = (long int) _2;
+  _4 = __builtin_expect (_3, 1);
+  if (_4 != 0) goto <D.222063>; else goto <D.222064>;
+  <D.222063>:
+  _Num.8_5 = (long long unsigned int) _Num;
+  _6 = _Num.8_5 * 4;
+  __builtin_memmove (__result, __first, _6);
+  goto <D.222065>;
+  <D.222064>:
+  if (_Num == 1) goto <D.222066>; else goto <D.222067>;
+  <D.222066>:
+  std::__copy_move<false, false, std::random_access_iterator_tag>::__assign_one<int, const int> (__result, __first);
+  goto <D.222068>;
+  <D.222067>:
+  <D.222068>:
+  <D.222065>:
+  _Num.9_7 = (long long unsigned int) _Num;
+  _8 = _Num.9_7 * 4;
+  D.222069 = __result + _8;
+  return D.222069;
+}
+
+
+ std::__copy_move<false, false, std::random_access_iterator_tag>::__assign_one<int, const int> (int * __to, const int * __from)
+{
+  _1 = *__from;
+  *__to = _1;
+}
+
+
+ std::__niter_wrap<int*> (int * const & D.221488, int * __res)
+{
+  int * D.222071;
+
+  D.222071 = __res;
+  return D.222071;
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::~_Vector_base (struct _Vector_base * const this)
+{
+  try
+    {
+      {
+        try
+          {
+            try
+              {
+                _1 = this->_M_impl.D.186082._M_end_of_storage;
+                _2 = this->_M_impl.D.186082._M_start;
+                _3 = _1 - _2;
+                _4 = _3 /[ex] 4;
+                _5 = (long long unsigned int) _4;
+                _6 = this->_M_impl.D.186082._M_start;
+                std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this, _6, _5);
+              }
+            finally
+              {
+                _7 = &this->_M_impl;
+                std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (_7);
+              }
+          }
+        finally
+          {
+            *this = {CLOBBER(eob)};
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::_M_deallocate (struct _Vector_base * const this, int * __p, size_t __n)
+{
+  typedef struct _Tr _Tr;
+
+  if (__p != 0B) goto <D.222073>; else goto <D.222074>;
+  <D.222073>:
+  _1 = &this->_M_impl;
+  std::allocator_traits<std::allocator<int> >::deallocate (_1, __p, __n);
+  goto <D.222075>;
+  <D.222074>:
+  <D.222075>:
+}
+
+
+__attribute__((always_inline))
+void std::allocator_traits<std::allocator<int> >::deallocate (struct allocator_type & __a, int * __p, size_type __n)
+{
+  std::__new_allocator<int>::deallocate (__a, __p, __n);
+}
+
+
+ std::__new_allocator<int>::deallocate (struct __new_allocator * const this, int * __p, size_type __n)
+{
+  if (0 != 0) goto <D.222076>; else goto <D.222077>;
+  <D.222076>:
+  _1 = __n * 4;
+  operator delete (__p, _1, 4);
+  // predicted unlikely by early return (on trees) predictor.
+  return;
+  <D.222077>:
+  _2 = __n * 4;
+  operator delete (__p, _2);
+}
+
+
+ std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (struct _Vector_impl * const this)
+{
+  try
+    {
+      try
+        {
+
+        }
+      finally
+        {
+          std::allocator<int>::~allocator (this);
+        }
+    }
+  finally
+    {
+      *this = {CLOBBER(eob)};
+    }
+}
+
+
+__attribute__((always_inline))
+void std::allocator<int>::~allocator (struct allocator * const this)
+{
+  try
+    {
+      {
+        try
+          {
+
+          }
+        finally
+          {
+            std::__new_allocator<int>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::__new_allocator<int>::~__new_allocator (struct __new_allocator * const this)
+{
+  try
+    {
+      {
+
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+__attribute__((nodiscard))
+size_type std::vector<int>::size (const struct vector * const this)
+{
+  size_type D.222079;
+
+  try
+    {
+      _1 = this->D.186746._M_impl.D.186082._M_finish;
+      _2 = this->D.186746._M_impl.D.186082._M_start;
+      _3 = _1 - _2;
+      _4 = _3 /[ex] 4;
+      D.222079 = (size_type) _4;
+      return D.222079;
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+  __builtin_unreachable trap ();
+}
+
+
+__attribute__((always_inline))
+void std::allocator<int>::~allocator (struct allocator * const this)
+{
+  try
+    {
+      {
+        try
+          {
+
+          }
+        finally
+          {
+            std::__new_allocator<int>::~__new_allocator (this);
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+ std::vector<int>::~vector (struct vector * const this)
+{
+  try
+    {
+      {
+        try
+          {
+            try
+              {
+                _1 = &this->D.186746;
+                _2 = std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (_1);
+                _3 = this->D.186746._M_impl.D.186082._M_finish;
+                _4 = this->D.186746._M_impl.D.186082._M_start;
+                std::_Destroy<int*, int> (_4, _3, _2);
+              }
+            finally
+              {
+                _5 = &this->D.186746;
+                std::_Vector_base<int, std::allocator<int> >::~_Vector_base (_5);
+              }
+          }
+        finally
+          {
+            *this = {CLOBBER(eob)};
+          }
+      }
+    }
+  catch
+    {
+      <<<eh_must_not_throw (__cxa_call_terminate)>>>
+    }
+}
+
+
+__attribute__((always_inline))
+void std::_Destroy<int*, int> (int * __first, int * __last, struct allocator & D.216637)
+{
+  std::_Destroy<int*> (__first, __last);
+}
+
+
+ std::_Destroy<int*> (int * __first, int * __last)
+{
+  typedef _Value_type _Value_type;
+
+  std::_Destroy_aux<true>::__destroy<int*> (__first, __last);
+}
+
+
+ std::_Destroy_aux<true>::__destroy<int*> (int * D.220387, int * D.220388)
+{
+  GIMPLE_NOP
+}
+
+
